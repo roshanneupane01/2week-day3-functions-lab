@@ -14,9 +14,9 @@ let multiply = (num1, num2, callback) =>{
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-multiply(4, 3, answer => {
-  console.log('The answer is ' + answer) //should console.log 12
-})
+// multiply(4, 3, answer => {
+//   console.log('The answer is ' + answer) //should console.log 12
+// })
 
 
 
@@ -47,9 +47,9 @@ let first = (arr, callback) => {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-first(names, firstName => {
-  console.log('The first name in names is ' + firstName)
-})
+// first(names, firstName => {
+//   console.log('The first name in names is ' + firstName)
+// })
 
 
 
@@ -70,9 +70,9 @@ let last  = (arr, callback) => {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-last(names, lastName => {
-  console.log('The last name in names is ' + lastName)
-})
+// last(names, lastName => {
+//   console.log('The last name in names is ' + lastName)
+// })
 
 
 
@@ -102,13 +102,13 @@ let contains  = (arr, name, callback) => {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-contains(names, 'Colt', result => {
-  if(result === true){
-    console.log('Colt is in the array')
-  } else {
-    console.log('Colt is not in the array')
-  }
-})
+// contains(names, 'Colt', result => {
+//   if(result === true){
+//     console.log('Colt is in the array')
+//   } else {
+//     console.log('Colt is not in the array')
+//   }
+// })
 
 
 
@@ -143,9 +143,9 @@ let uniq = (arr, callback) =>{
 */
 
 // CODE HERE
-uniq(names, (uniqArr) =>{
-  console.log(`The new names array with all the duplicate items removed is ${uniqArr}.`)
-})
+// uniq(names, (uniqArr) =>{
+//   console.log(`The new names array with all the duplicate items removed is ${uniqArr}.`)
+// })
 
 
 
@@ -172,9 +172,9 @@ let each = (arr, callback) =>{
 */
 
 // CODE HERE
-each(modifiedArray, (item, index)=>{
-  console.log(`The item at index ${index} is ${item}.`)
-})
+// each(modifiedArray, (item, index)=>{
+//   console.log(`The item at index ${index} is ${item}.`)
+// })
 
 
 
@@ -201,6 +201,7 @@ each(modifiedArray, (item, index)=>{
 */
 
 // CODE HERE
+let addingFactory = num1 => num2 => num1+num2
 
 /*
   Now that you have addingFactory, you can create other
@@ -215,6 +216,8 @@ each(modifiedArray, (item, index)=>{
 */
 
 // CODE HERE
+let addTen = addingFactory(10)
+
 
 /*
   Now the inner function is stored in the addTen variable! 
@@ -227,6 +230,7 @@ each(modifiedArray, (item, index)=>{
 */
 
 // CODE HERE
+// console.log(addTen(5))
 
 /*
   Let's make another function from the addingFactory. 
@@ -240,6 +244,8 @@ each(modifiedArray, (item, index)=>{
 */
 
 // CODE HERE
+let addNUMBER = addingFactory(7)
+// console.log(addNUMBER(7))
 
 
 
@@ -276,13 +282,19 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE 
-
+let getUserById = (arr, id, callback) => {
+  arr.forEach(user => {
+    if(user.id === id){
+      callback(user)
+    }
+  });
+}
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
+getUserById(users, '16t', user => {
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+})
