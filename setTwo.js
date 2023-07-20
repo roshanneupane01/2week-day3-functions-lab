@@ -122,8 +122,8 @@ contains(names, 'Colt', result => {
 */
 
 // CODE HERE
+let modifiedArray = []
 let uniq = (arr, callback) =>{
-  let modifiedArray = []
   for(let i = 0; i<arr.length; i++){
     for(let j = 0; j<arr.length; j++){
       if(i != j && (arr[i] !== arr[j]) && !modifiedArray.includes(arr[i])){
@@ -172,7 +172,7 @@ let each = (arr, callback) =>{
 */
 
 // CODE HERE
-each(names, (item, index)=>{
+each(modifiedArray, (item, index)=>{
   console.log(`The item at index ${index} is ${item}.`)
 })
 
